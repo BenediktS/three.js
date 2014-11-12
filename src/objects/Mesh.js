@@ -227,6 +227,14 @@ THREE.Mesh.prototype.raycast = ( function () {
 			return;
 
 		}
+		
+		// If we have a BVHTree, then we will check this tree for intersection
+		if (this.BVHTree) {
+			
+			this.BVHTree.intersectsRay(ray, raycaster.precision, raycaster.near, raycaster.far, intersects);
+			return;
+			
+		}		
 
 		// Check boundingBox before continuing
 		if ( geometry.boundingBox !== null ) {
