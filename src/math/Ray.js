@@ -490,7 +490,9 @@ THREE.Ray.prototype = {
 			}
 
 			// Ray intersects triangle.
-			return this.at( QdN / DdN, optionalTarget );
+			var result = this.at( QdN / DdN, optionalTarget );
+			result.intersectsFrontSide = ( sign === -1 );
+			return result;
 
 		};
 
