@@ -158,7 +158,7 @@ THREE.Mesh.prototype.objectSpaceRayIntersectsFace = function() {
 			vC.set( 0, 0, 0 );
 
 
-			if ( faceMaterial.morphTargets === true ) {
+			if ( material.morphTargets === true ) {
 
 				var morphTargets = geometry.morphTargets;
 				var morphInfluences = this.morphTargetInfluences;
